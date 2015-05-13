@@ -1,0 +1,38 @@
+
+/* login / register panel */
+.margin-top-panel {
+    margin-top: 150px;
+}
+/* */
+
+
+/* password START indicator style */
+.gray{
+color:white;
+background-color:gray;
+width:auto;
+margin-top: 10px;
+}
+
+.red{
+color:white;
+background-color:red;
+padding:0px 45%;
+height:50px;
+width: auto;
+}
+.orange{
+color:white;
+background-color:orange;
+padding:0px 45%;
+}
+.green{
+color:white;
+background-color:green;
+padding:0px 45%;
+}
+
+/* password END indicator style */
+
+
+
