@@ -67,11 +67,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     
 
 
-<?php
-//echo $this->Html->script(array(
-  //                  'jquery-1.11.1','zebra_datepicker','core'
- //               ));
-//?>
+
+<?php echo $this->Html->script(array(
+        'jquery.min',
+        'jquery-ui.min',
+        'application')); ?>
 <script src="/message_boardss/js/bootstrap.js"></script>	
 </body>
 </html>

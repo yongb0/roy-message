@@ -18,7 +18,7 @@
                     <li style="color:white;"><?php echo $this->Html->link( "Messsage List",   array('controller' => 'messages', 'action'=>'index') ); ?></li>
                     <li style="color:white;"><?php echo $this->Html->link("My Profile", array('controller' => 'users', 'action' => 'editProfile')) ?></li>
                     
-                </ul>
+                </ul>   
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color:white;">Welcome <i class="glyphicon glyphicon-user"></i> <?php echo ucwords(strtolower($this->Session->read('name'))); ?><b class="caret"></b></a>
@@ -40,19 +40,34 @@
                 <span class="glyphicon glyphicon-pencil"></span> 
                  Create Message
             </h2>
-        </div>
+			
+
+
+
+ 
         <div class="breadcrumb">
-            <?php echo $this->Form->create('Message',array('controller'=>'message', 'action'=>'send')); ?>
+            <?php echo $this->Form->create('User',array('controller'=>'users', 'action'=>'search')); ?>
             <?php echo $this->Form->hidden('from', array('class' => 'form-control', 'name' => 'data[Message][from_id]', 'value' => $this->Session->read('Auth.User.id'))); ?>
+
+
+            <!-----
             <div class="form-group">
                 <label for="MessageToId">Recipient</label>
                 <select name="data[Message][to_id]" class="form-control" id="MessageToId">
                     <option value="">Select recipient</option>
-                    <?php foreach ($users as $user) : ?>
-                    <option value="<?php echo  $user['User']['id'] ?>"><?php echo ucwords(strtolower($user['User']['name'])); ?></option>
-                    <?php endforeach; ?>
+                    <?php //foreach ($users as $user) : ?>
+                    <option value="<?php //echo  $user['User']['id'] ?>"><?php// echo ucwords(strtolower($user['User']['name'])); ?></option>
+                    <?php// endforeach; ?>
                 </select>
             </div>
+            ------>
+
+   
+    <?php
+        echo $this->Form->input('name',array('type'=>'text','id'=>'name','label'=>'Recipient', 'class' => 'form-control'));
+    ?>
+
+
             <div class="form-group">
             <?php echo $this->Form->textarea('content',array('class' => 'form-control', 'rows' => '8', 'placeholder' => 'Type your message here.')); ?>
             </div>
@@ -61,6 +76,10 @@
             
             <?php echo $this->Form->end(); ?>
         </div>
+
+
+
+
      </div>
 
 
