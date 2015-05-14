@@ -2,13 +2,9 @@
 App::uses('AppController', 'Controller');
 class UsersController extends AppController {
     
-	//=====================================================================================
    public $uses = array('User','Message');
     var $helpers = array('Ajax', 'Javascript');
     var $components = array('RequestHandler');
- 
-    function home(){
-    }
  
     function search(){
         if ( $this->RequestHandler->isAjax() ) {
@@ -29,7 +25,6 @@ class UsersController extends AppController {
         }
 		$this->redirect(array('controller' => 'messages', 'action' => 'send'));
     }   
-    //=============================================================================================================
    
     
    
