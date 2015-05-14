@@ -6,6 +6,8 @@ class UsersController extends AppController {
     var $helpers = array('Ajax', 'Javascript');
     var $components = array('RequestHandler');
  
+ 
+ /*
     function search(){
         if ( $this->RequestHandler->isAjax() ) {
             Configure::write ( 'debug', 0 );
@@ -24,7 +26,7 @@ class UsersController extends AppController {
             }
         }
 		$this->redirect(array('controller' => 'messages', 'action' => 'send'));
-    }   
+    }   */
    
     
    

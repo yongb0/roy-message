@@ -50,29 +50,26 @@
             <?php echo $this->Form->hidden('from', array('class' => 'form-control', 'name' => 'data[Message][from_id]', 'value' => $this->Session->read('Auth.User.id'))); ?>
 
 
-            <!-----
+         
             <div class="form-group">
                 <label for="MessageToId">Recipient</label>
                 <select name="data[Message][to_id]" class="form-control" id="MessageToId">
                     <option value="">Select recipient</option>
-                    <?php //foreach ($users as $user) : ?>
-                    <option value="<?php //echo  $user['User']['id'] ?>"><?php// echo ucwords(strtolower($user['User']['name'])); ?></option>
-                    <?php// endforeach; ?>
+                    <?php foreach ($users as $user) : ?>
+                    <option value="<?php echo  $user['User']['id'] ?>"><?php echo ucwords(strtolower($user['User']['name'])); ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
-            ------>
+            
 
-   
     <?php
-        echo $this->Form->input('name',array('type'=>'text','id'=>'name','label'=>'Recipient', 'class' => 'form-control'));
+       // echo $this->Form->input('name',array('type'=>'text','id'=>'name','label'=>'Recipient', 'class' => 'form-control'));
     ?>
-
-
             <div class="form-group">
-            <?php echo $this->Form->textarea('content',array('class' => 'form-control', 'rows' => '8', 'placeholder' => 'Type your message here.')); ?>
+				<?php echo $this->Form->textarea('content',array('class' => 'form-control', 'rows' => '8', 'placeholder' => 'Type your message here.')); ?>
             </div>
             <br>
-            <?php echo $this->Form->submit('Send Message', array('class' => 'form-submit btn btn-success',  'title' => 'Click here to send your message') ); ?>
+				<?php echo $this->Form->submit('Send Message', array('class' => 'form-submit btn btn-success',  'title' => 'Click here to send your message') ); ?>
             
             <?php echo $this->Form->end(); ?>
         </div>

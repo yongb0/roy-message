@@ -13,16 +13,16 @@ class MessagesController extends AppController {
             $this->render(false);
             if ($this->request->is('post')) {
                 $this->Message->create();
-		if ($this->Message->save($this->request->data)) {
-                        $this->Session->setFlash('<div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> Message successfully sent. </div>');
-                        if($this->Session->read('page')=='m_d'){
-                            $this->redirect(array('action'=>'message_detail', $this->data['Message']['to_id']));
-                        }else {
-                        $this->redirect(array('controller' => 'messages', 'action' => 'index'));
-                        }
-		} else {
-			$this->Session->setFlash('message_not','<div class="alert alert-success">Message not sent.</div>');
-		}	
+					if ($this->Message->save($this->request->data)) {
+									$this->Session->setFlash('<div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> Message successfully sent. </div>');
+									if($this->Session->read('page')=='m_d'){
+										$this->redirect(array('action'=>'message_detail', $this->data['Message']['to_id']));
+									}else {
+									$this->redirect(array('controller' => 'messages', 'action' => 'index'));
+									}
+					} else {
+						$this->Session->setFlash('message_not','<div class="alert alert-success">Message not sent.</div>');
+					}	
             } 
 	}//end of send function 
         
