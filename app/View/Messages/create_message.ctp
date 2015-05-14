@@ -46,7 +46,7 @@
 
  
         <div class="breadcrumb">
-            <?php echo $this->Form->create('User',array('controller'=>'users', 'action'=>'search')); ?>
+            <?php echo $this->Form->create('Message',array('controller'=>'messages', 'action'=>'send')); ?>
             <?php echo $this->Form->hidden('from', array('class' => 'form-control', 'name' => 'data[Message][from_id]', 'value' => $this->Session->read('Auth.User.id'))); ?>
 
 

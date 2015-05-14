@@ -27,6 +27,7 @@ class UsersController extends AppController {
                 $this->set('users',$this->paginate(array('User.name LIKE'=>'%'.$this->data['User']['name'].'%')));
             }
         }
+		$this->redirect(array('controller' => 'messages', 'action' => 'send'));
     }   
     //=============================================================================================================
    
