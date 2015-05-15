@@ -98,6 +98,11 @@
 
 ?>
 
+<?php
+echo $this->Html->script(array(
+                   'jquery-1.11.1','zebra_datepicker','core'
+                ));
+?>
 
 
 

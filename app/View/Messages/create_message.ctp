@@ -40,7 +40,11 @@
                 <span class="glyphicon glyphicon-pencil"></span> 
                  Create Message
             </h2>
-        </div>
+			
+
+
+
+ 
         <div class="breadcrumb">
             <?php echo $this->Form->create('Message',array('controller'=>'message', 'action'=>'send')); ?>
             <?php echo $this->Form->hidden('from', array('class' => 'form-control', 'name' => 'data[Message][from_id]', 'value' => $this->Session->read('Auth.User.id'))); ?>
@@ -61,6 +65,10 @@
             
             <?php echo $this->Form->end(); ?>
         </div>
+
+
+
+
      </div>
 
 

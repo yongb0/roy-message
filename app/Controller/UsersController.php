@@ -1,15 +1,12 @@
 <?php
+App::uses('AppController', 'Controller');
 class UsersController extends AppController {
     
- 
-    public $helpers = array('Html', 'Form');
+	var $name = 'Users';
+		var $helpers = array('Ajax', 'Javascript');
+		var $components = array('RequestHandler');    
     
-    
-    public $paginate = array(
-        'limit' => 25,
-        'conditions' => array('status' => '1'),
-    	'order' => array('User.username' => 'asc' ) 
-    );
+   
     
     public function beforeFilter() {
         parent::beforeFilter();
@@ -31,7 +28,30 @@ class UsersController extends AppController {
 		} 
                 
 	}//end of function
-        
+   
+ //=====================================================================================
+    function home(){
+    }
+ 
+    function search(){
+        if ( $this->RequestHandler->isAjax() ) {
+            Configure::write ( 'debug', 0 );
+            $this->autoRender=false;
+            $users=$this->User->find('all',array('conditions'=>array('User.name LIKE'=>'%'.$_GET['term'].'%')));
+                $i=0;
+                foreach($users as $user){
+                    $response[$i]['value']=$user['User']['name'];
+                    $response[$i]['label']=$user['User']['name'];
+                $i++;
+                }
+            echo json_encode($response);
+        }else{
+            if (!empty($this->data)) {
+                $this->set('users',$this->paginate(array('User.name LIKE'=>'%'.$this->data['User']['name'].'%')));
+            }
+        }
+    }    
+	//==========================================================================
         
     public function logout() {
 	$this->redirect($this->Auth->logout());
