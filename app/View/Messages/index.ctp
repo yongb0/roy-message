@@ -52,7 +52,7 @@
                             <div class="avatar pull-left">
                                 <a href="#userProfile<?php echo $message['User']['id']; ?>" data-toggle="modal">
                                     <?php if ($message['User']['image']!='') { 
-                                        echo $this->Html->image('users/'.$users['User']['image'], array('class' => 'img-responsive'));
+                                        echo $this->Html->image('users/'.$message['User']['image'], array('class' => 'img-responsive'));
                                      } else { 
                                         echo $this->Html->image('user.jpg', array('class' => 'img-responsive'));
                                      } ?>
