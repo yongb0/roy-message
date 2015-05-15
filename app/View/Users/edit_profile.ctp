@@ -51,13 +51,11 @@
             <?php foreach ($users as $user): ?>
             <div class="col-sm-5">
                 
-                <?php if($users['User']['image']!='') { ?>
-                    <img src="/message_boardss/img/users/<?php echo $users['User']['image'];?>" class="img-responsive"/>
-                <?php }else{ ?>
-                    
-                    <img src="/message_boardss/img/user.jpg" class="img-responsive"/>
-                    
-                <?php } ?>
+                <?php if($users['User']['image']!='') { 
+					echo $this->Html->image('users/'.$users['User']['image'], array('class' => 'img-responsive'));
+                }else{ 
+					echo $this->Html->image('user.jpg', array('class' => 'img-responsive'));
+				} ?>
                     <?php echo $this->Form->input('image', array('type' => 'file', 'class' => 'form-control', 'value' => '')); ?> 
             </div>
             <div class="col-sm-7">
