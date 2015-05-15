@@ -2,9 +2,38 @@
 App::uses('AppController', 'Controller');
 class UsersController extends AppController {
     
+<<<<<<< HEAD
 	var $name = 'Users';
 		var $helpers = array('Ajax', 'Javascript');
 		var $components = array('RequestHandler');    
+=======
+   public $uses = array('User','Message');
+    var $helpers = array('Ajax', 'Javascript');
+    var $components = array('RequestHandler');
+ 
+ 
+ /*
+    function search(){
+        if ( $this->RequestHandler->isAjax() ) {
+            Configure::write ( 'debug', 0 );
+            $this->autoRender=false;
+            $users=$this->User->find('all',array('conditions'=>array('User.name LIKE'=>'%'.$_GET['term'].'%')));
+                $i=0;
+                foreach($users as $user){
+                    $response[$i]['value']=$user['User']['name'];
+                    $response[$i]['label']=$user['User']['name'];
+                $i++;
+                }
+            echo json_encode($response);
+        }else{
+            if (!empty($this->data)) {
+                $this->set('users',$this->paginate(array('User.name LIKE'=>'%'.$this->data['User']['name'].'%')));
+            }
+        }
+		$this->redirect(array('controller' => 'messages', 'action' => 'send'));
+    }   */
+   
+>>>>>>> origin/master
     
    
     
@@ -29,6 +58,7 @@ class UsersController extends AppController {
                 
 	}//end of function
    
+<<<<<<< HEAD
  //=====================================================================================
     function home(){
     }
@@ -52,6 +82,9 @@ class UsersController extends AppController {
         }
     }    
 	//==========================================================================
+=======
+ 
+>>>>>>> origin/master
         
     public function logout() {
 	$this->redirect($this->Auth->logout());
