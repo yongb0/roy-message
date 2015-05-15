@@ -51,11 +51,11 @@
 			<div class="message-head clearfix">
                             <div class="avatar pull-left">
                                 <a href="#userProfile<?php echo $message['User']['id']; ?>" data-toggle="modal">
-                                    <?php if ($message['User']['image']!='') { ?>
-                                        <img src="/message_boardss/img/users/<?php echo $message['User']['image']; ?>" class="img-circle img-for-own-message">
-                                    <?php } else { ?>
-                                        <img src="/message_boardss/img/user.jpg" class="img-circle img-for-own-message">
-                                    <?php } ?>
+                                    <?php if ($message['User']['image']!='') { 
+                                        echo $this->Html->image('users/'.$users['User']['image'], array('class' => 'img-responsive'));
+                                     } else { 
+                                        echo $this->Html->image('user.jpg', array('class' => 'img-responsive'));
+                                     } ?>
                                 </a>
                             </div>
                             <div class="user-detail">
@@ -145,12 +145,11 @@
                         <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <?php if(!empty($message['User']['image'])) { ?>
-                                        <img src="/message_boardss/img/users/<?php echo $users['User']['image'];?>" class="img-responsive"/>
-                                    <?php } else { ?>
-                                        <img src="/message_boardss/img/user.jpg" class="img-responsive"/>
-                                    <?php } ?>
-                                    <img src=""/>
+                                   <?php if ($message['User']['image']!='') { 
+                                        echo $this->Html->image('users/'.$users['User']['image'], array('class' => 'img-responsive'));
+                                     } else { 
+                                        echo $this->Html->image('user.jpg', array('class' => 'img-responsive'));
+                                     } ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <h4>
