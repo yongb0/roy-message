@@ -52,9 +52,9 @@
                             <div class="avatar pull-left">
                                 <a href="#userProfile<?php echo $message['User']['id']; ?>" data-toggle="modal">
                                     <?php if ($message['User']['image']!='') { 
-                                        echo $this->Html->image('users/'.$message['User']['image'], array('class' => 'img-responsive'));
+                                        echo $this->Html->image('users/'.$message['User']['image'], array('class' => 'img-responsive','width' => '60','height' => '60'));
                                      } else { 
-                                        echo $this->Html->image('user.jpg', array('class' => 'img-responsive'));
+                                        echo $this->Html->image('user.jpg', array('class' => 'img-responsive','width' => '60','height' => '60'));
                                      } ?>
                                 </a>
                             </div>
@@ -146,9 +146,9 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                    <?php if ($message['User']['image']!='') { 
-                                        echo $this->Html->image('users/'.$users['User']['image'], array('class' => 'img-responsive'));
+                                        echo $this->Html->image('users/'.$message['User']['image'], array('class' => 'img-responsive','width' => '60','height' => '60'));
                                      } else { 
-                                        echo $this->Html->image('user.jpg', array('class' => 'img-responsive'));
+                                        echo $this->Html->image('user.jpg', array('class' => 'img-responsive','width' => '60','height' => '60'));
                                      } ?>
                                 </div>
                                 <div class="col-sm-6">
