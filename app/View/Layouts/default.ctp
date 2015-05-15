@@ -36,7 +36,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 ));
                //echo $this->Html->script(array('prototype'));
                 echo $this->Html->script(array(
-                    'XRegExp','shCore','shLegacy','shBrushJScript','shBrushXML','selector','typeahead.min'
+                    'XRegExp','shCore','shLegacy','shBrushJScript','shBrushXML','jquery.min','selector','typeahead.min'
                 ));
                 
 		echo $this->Html->meta('icon');
@@ -64,15 +64,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</div>
     
     
-    
-
-
 
 <?php echo $this->Html->script(array(
         'jquery.min',
         'jquery-ui.min',
         'application',
-		'bootstrap')); ?>
-
+		'bootstrap'));  ?>
 </body>
 </html>
