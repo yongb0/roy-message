@@ -55,9 +55,16 @@
                 <label for="MessageToId">Recipient</label>
                 <select name="data[Message][to_id]" class="form-control" id="MessageToId">
                     <option value="">Select recipient</option>
+					
                     <?php foreach ($users as $user) : ?>
+					
+					<?php if($user['User']['id']!=$this->Session->read('Auth.User.id')) { ?>
                     <option value="<?php echo  $user['User']['id'] ?>"><?php echo ucwords(strtolower($user['User']['name'])); ?></option>
+					<?php } ?>
+					
                     <?php endforeach; ?>
+					
+					
                 </select>
             </div>
             
