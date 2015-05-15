@@ -71,12 +71,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <?php echo $this->Html->script(array(
         'jquery.min',
         'jquery-ui.min',
-<<<<<<< HEAD
         'application')); ?>
 <script src="/message_boardss/js/bootstrap.js"></script>	
-=======
-        'application',
-		'bootstrap')); ?>
->>>>>>> origin/master
+
 </body>
 </html>

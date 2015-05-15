@@ -32,11 +32,6 @@
 </div>
 <br>
 
-<<<<<<< HEAD
-       
-=======
-
->>>>>>> origin/master
 
         </div>
 

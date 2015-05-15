@@ -26,9 +26,7 @@ class MessagesController extends AppController {
             } 
 	}//end of send function 
         
-<<<<<<< HEAD
-    function home(){
-    }
+
  
     function search(){
         if ( $this->RequestHandler->isAjax() ) {
@@ -49,9 +47,7 @@ class MessagesController extends AppController {
         }
     }   
        
-=======
-           
->>>>>>> origin/master
+
        public function index(){
             $this->Session->write('page','m_l');
             $this->paginate = array (
